@@ -1,7 +1,9 @@
 from typing import Iterable, Tuple, List, Union
+
 TicTacToeRow = List[str]
 TicTacToeBoard = Tuple[TicTacToeRow, TicTacToeRow, TicTacToeRow]
 
+print(TicTacToeBoard)
 
 def tic_tac_toe_finish(board: TicTacToeBoard, pos_y: int, pos_x: int, symbol: str) -> None:
     """
@@ -14,10 +16,16 @@ def tic_tac_toe_finish(board: TicTacToeBoard, pos_y: int, pos_x: int, symbol: st
     :param symbol: The symbol that should be placed in the column (X, or O)
     :return: None
     """
-    pass  # remove pass statement and implement me
+    #_ _ x
+    # x, x _
 
+    # user enters symbol at entered position on to board
+    board[pos_y][pos_x] = symbol
+
+    # pass statement and implement me
 
 def count_instances(collection: Tuple, instance: Union[int, str]) -> int:
+
     """
     This function counts the number of occurrences of the instance value within the collection parameter.
 
@@ -25,7 +33,11 @@ def count_instances(collection: Tuple, instance: Union[int, str]) -> int:
     :param instance: An item in the collection parameter
     :return: An integer.
     """
-    pass  # remove pass statement and implement me
+    #had to run in ide first, then test case passed
+    count = collection.count(instance)
+    return (count) 
+
+    #pass  # remove pass statement and implement me
 
 
 def print_indexes_and_entries(indexes: Iterable, entries: Iterable) -> None:
@@ -38,7 +50,11 @@ def print_indexes_and_entries(indexes: Iterable, entries: Iterable) -> None:
     :param entries: A list or tuple
     :return: None
     """
-    pass  # remove pass statement and implement me
+    for index, entry in zip(indexes, entries):
+        print (f"Index: {index:<10} Entry: {entry}")
+
+   
+    #pass  # remove pass statement and implement me
 
 
 def print_items_with_index(items: Iterable):
@@ -50,5 +66,15 @@ def print_items_with_index(items: Iterable):
     :param items: A tuple or a list
     :return: None
     """
-    pass  # remove pass statement and implement me
+    # initialize outcome
+    outcome = ""
+    for i, item in enumerate(items, start=1):
+        if i < len(items):
+             outcome += f"{i}: {item}\n"
+        else:    
+             outcome += f"{i}: {item}"
+    print(outcome)
+
+
+    # pass  # remove pass statement and implement me
 
